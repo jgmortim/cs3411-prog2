@@ -1,0 +1,23 @@
+Everything Works! Unless you want more than 1023 players.
+1024 or more players creates a pipe error.
+Valgrind reports no errors or memory leaks.
+
+Error handling (exit with no leaks) for:
+	incorrect input (usage)
+	dup2()
+	execv()
+	fork()
+	pipe()
+
+No/minimal error handling for:
+	free()
+	malloc()
+	read()
+	sprintf()
+	write()
+
+Also, I discovered that if you accidentially send SIGTERM to a process twice,
+the lab computers force logout without properly closing any of the
+applications you have running.
+
+-John Mortimore
